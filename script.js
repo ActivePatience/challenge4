@@ -58,7 +58,7 @@ function display_shift(active_disp) {
   for (let i = 0; i < displays.length; i++) {
     displays[i].style.display = "none";
   }
-  document.querySelector('#' + active_disp).style.display = "flex;justify-content:center;align-items:center;";
+  document.querySelector('#' + active_disp).style = "display:block;justify-content:center;align-items:center;";
 }
 
 function build_high_score_list() {
@@ -137,7 +137,7 @@ function feedback(fdbk) {
     <table>
       <tr>
         <td>
-          <hr></hr>
+          <div style='borderTop:"thick solid #0000FF"'></div>
         </td>
         <td>
           ` + fdbk + `

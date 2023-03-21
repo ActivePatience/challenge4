@@ -9,50 +9,66 @@
   </head>
   <body>
     
-    <table>
+    <table style="width:100%">
       <tr>
         <td>
-          <a href="">View High Scores</a>
+          <a style="color:#BF40BF;" onclick="build_high_score_list();display_shift('high_scores');">View High Scores</a>
         </td>
-        <td>
-          <p id="timer_disp">Timer: --</p>
+        <td id="timer_disp" style="text-align:right">
+          Timer: --
         </td>
       </tr>
     </table>
 
 
-    <div id="start_page">
-          <h1>Coding Quiz</h1>
-          <p>Lorem ipsum instructions...</p>
-          <button id="start_butt">Start Quiz</button>
-    </div>
+    <div id="display" style="display:flex;justify-content:center;align-items:center;">
+      <div id="start_page">
+            <h1>Coding Quiz</h1>
+            <div style="text-align:center;">Lorem ipsum instructions...</div><br>
+            <div style="display:flex;justify-content:center;align-items:center;"><button id="start_butt">Start Quiz</button></div>
+      </div>
+    
 
 
 
-    <div id="questions">
+      <div id="questions" style="display:none;">
 
-      <h1 id="question_content"></h1>
+        <h1 id="question_content"></h1>
 
-      <div id="possible_answers">
-        <button id="b1" class="answer_button"></button>
-        <button id="b2" class="answer_button"></button>
-        <button id="b3" class="answer_button"></button>
-        <button id="b4" class="answer_button"></button>
+        <table id="possible_answers">
+          <tr><td><button id="b1" class="answer_button" onclick="answer_chosen(1);"></button></td></tr>
+          <tr><td><button id="b2" class="answer_button" onclick="answer_chosen(2);"></button></td></tr>
+          <tr><td><button id="b3" class="answer_button" onclick="answer_chosen(3);"></button></td></tr>
+          <tr><td><button id="b4" class="answer_button" onclick="answer_chosen(4);"></button></td></tr>
+        </table>
+
+        <p id="question_response"></p>
+
       </div>
 
-      <p id="question_response"></p>
-
-    </div>
 
 
+      <div id="all_done" style="display:none;">
+        <h1>All done!</h1>
+        <p id="final_score"></p>
+        <div>
+          Enter your initials: 
+          <input id="initials" type="text"/>
+          <button id="score_submit" onclick="add_score();">Submit</button>
+        </div>
+      </div>
 
-    <div id="all_done">
 
-    </div>
-
-
-    <div id="high_scores">
-
+      <div id="high_scores" style="display:none;">
+        <h1>High Scores</h1>
+        <div id="scores_table"></div>
+        <table>
+          <tr>
+            <td><button id="go_back">Go Back</button></td>
+            <td><button id="clear">Clear High Scores</button></td>
+          </tr>
+        </table>
+      </div>
     </div>
 
 
